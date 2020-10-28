@@ -107,8 +107,8 @@
 		echo "<tr>";
 	if ($r) {
 		while ($row=mysqli_fetch_array($r, MYSQLI_NUM)) {
-			for ($x=0; $x < 7; $x++) {
-				if ($x==7) {
+			for ($x=0; $x < 9; $x++) {
+				if ($x==9) {
 					break;
 				}
 				echo "<td>" . $row[$x] . "</td>";
