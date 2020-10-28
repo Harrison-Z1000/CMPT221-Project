@@ -94,7 +94,7 @@ Sunset Cruises features the most complete selection of onboard modern and comfor
 <hr>
 <!-- Disclaimer -->
 	
-<php?
+<?php
       include "SCfooter.php";
 ?>
 	
