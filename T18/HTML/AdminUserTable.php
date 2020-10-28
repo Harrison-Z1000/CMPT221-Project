@@ -83,7 +83,7 @@
 	/*
 		Query to get Columns from the Users Table
 	*/
-	$table="Team18_Users";
+	$table="T18_Users";
 	$q="EXPLAIN $table";
 	$r=mysqli_query($dbc, $q);
 
