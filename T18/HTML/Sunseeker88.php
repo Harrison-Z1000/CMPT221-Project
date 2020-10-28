@@ -75,7 +75,7 @@
 <br></br>
 <hr></hr>
 
-<php?
+<?php
       include "SCfooter.php";
 ?>
       </Body>
