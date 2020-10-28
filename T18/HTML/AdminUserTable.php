@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-     Cruise(Supplier) table Page
+     User table Page
      Created by Team 18. 27-Oct-2020
 -->
 
@@ -14,10 +14,10 @@
 	<!-- CSS -->
 	<style>
 		body { background: url(Crab.jpg) no-repeat;
-				background-size: cover;
-				height: 78vh;
-				background-position: center;
-				}
+			background-size: cover;
+			height: 78vh;
+			background-position: center;
+			}
 
 		p { margin: 1px;
 			padding: 7px;
@@ -44,15 +44,15 @@
 			  }
 
 		table, td { margin-right:auto;
-					margin-left: auto;
-					border:2px solid black;
-					border-collapse:collapse;
-					padding: 15px;
-					text-align: left;
-					background-color: white;
-					}
+			  margin-left: auto;
+			  border:2px solid black;
+			  border-collapse:collapse;
+			  padding: 15px;
+	  		  text-align: left;
+			  background-color: white;
+			  }
 
-        th { margin-right:auto;
+       		th { margin-right:auto;
 			 margin-left: auto;
 			 border:2px solid black;
 			 border-collapse:collapse;
@@ -83,7 +83,7 @@
 	/*
 		Query to get Columns from the Users Table
 	*/
-	$table="Team18_Users";
+	$table="T18_Users";
 	$q="EXPLAIN $table";
 	$r=mysqli_query($dbc, $q);
 
