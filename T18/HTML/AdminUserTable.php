@@ -52,7 +52,7 @@
 			  background-color: white;
 			  }
 
-        th { margin-right:auto;
+       		th { margin-right:auto;
 			 margin-left: auto;
 			 border:2px solid black;
 			 border-collapse:collapse;
