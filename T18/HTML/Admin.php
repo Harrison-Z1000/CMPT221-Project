@@ -14,10 +14,10 @@
 	<!-- CSS -->
 	<style>
 		body { background: url(Crab.jpg) no-repeat;
-				background-size: cover;
-				height: 76vh;
-				background-position: center;
-				}
+			background-size: cover;
+			height: 76vh;
+			background-position: center;
+			}
 							  
 		p { margin: 1px; 
 			padding: 7px;
@@ -44,13 +44,13 @@
 			  }
 			  
 		table, td { margin-right:auto;       
-					margin-left: auto; 
-					border:2px solid black;  
-					border-collapse:collapse;
-					padding: 15px; 
-					text-align: left;
-					background-color: white;
-					}
+			  margin-left: auto; 
+			  border:2px solid black;  
+			  border-collapse:collapse;
+			  padding: 15px; 
+			  text-align: left;
+			  background-color: white;
+			  }
 					
         th { margin-right:auto; 
 			 margin-left: auto; 
