@@ -39,6 +39,6 @@
 			echo "<li style='float: right;'><a href='Admin.php'> <u>Login</u> </a></li>";
 		echo "</ul>";
 	echo "</div>";
+// END OF FILE
 ?>
 
-// END OF FILE
