@@ -23,29 +23,6 @@
 				background-position: center;
 				}
 		
-		.header { width: 100%;
-				   background-color: rgb(0,0,0,.2);
-				   }
-		
-		.header ul { text-align: center; }
-		
-		.header ul li { list-style: none;
-						display: inline-block; 
-						}
-						
-		.header ul li a { display: block;
-						  text-decoration: none;
-						  text-transform: uppercase;
-						  color: black;
-						  font-size: 20px;
-						  letter-spacing: 2px;
-						  font-weight: 600;
-						  padding: 25px;
-						  transition: all ease 0.5s;
-						}
-						
-		.header ul li a:hover { background-color: lightgray;}
-		
 		.grid-container { display: grid;
 						  grid-template-columns: repeat(3, 1fr);
 						  grid-gap: 32px;
@@ -95,18 +72,9 @@
 <?php require ("../connect_db.php"); ?>
 
 <!---     Nar Bar     -->
-<div class="header">
-
-	<ul>
-		<li style="float: left;"><img src="Logo.png"></li> <!--                2) Navigation now links to proper pages                      -->
-		<li><a href="HomePage.html">Home</a></li> 
-		<li><a href="HomePage.html">Our Products</a></li>
-		<li><a href="AboutUs.html">About Us</a></li>
-		<li><a href="ContactUs.html">Contact Us</a></li>
-		<li style="float: right;"><a href="EmployeeLogin.html"> <u>Login</u> </a></li>
-		
-	</ul>
-</div>
+<?php
+	require "SCnavbar.php";
+?>
 <h2> Plan your perfect sailing experience! Do not miss the chance to wander through remote travel destinations to celebrate life in the most wonderful places in the world.<br><br>
 Sunset Cruises features the most complete selection of onboard modern and comfortable private yachts. </h2>
 <hr>
