@@ -16,3 +16,5 @@
 				echo "<br>  Privacy Policy";
 	echo "</footer>";
 ?>
+
+// END OF FILE
