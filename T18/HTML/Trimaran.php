@@ -20,10 +20,6 @@
           background-position: center;
           }
 
-      <php?
-      include "SCnavbar.php";
-      ?>
-
       .grid-container { display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 32px;
@@ -49,18 +45,9 @@
       </head>
       <!--  Body of webpage -->
       <body>
-        <div class="header">
-
-        	<ul>
-        		<li style="float: left;"><img src="Logo.png"></li>
-        		<li><a href="HomePage.html">Home</a></li> 
-				<li><a href="HomePage.html">Our Products</a></li>
-        		<li><a href="AboutUs.html">About Us</a></li>
-        		<li><a href="ContactUs.html">Contact Us</a></li>
-        		<li style="float: right;"><a href="EmployeeLogin.html"> <u>Login</u> </a></li>
-
-        	</ul>
-        </div>
+         <php?
+      include "SCnavbar.php";
+      ?>
 <hr></hr>
       <header> <h1> Trimaran Experience </h1> </header>
 <hr></hr>
