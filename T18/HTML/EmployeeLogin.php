@@ -104,14 +104,8 @@
 
 <hr>
 <!-- Disclaimer -->
-<footer style="font-size: 12px; text-align: center;"> 
-	<small> DISCLAIMER! <br> This Website was made for educational purposes only as a way for the students developing this page to learn 
-	 the topics of Software Development II. By using this site you understand that no real cruises are being 
-	 sold and that all the products on the site are fake. This site should not be used as a substitute for a cruise travel agency.
-	 <br> 
-	2020 (C) Oliver Wilson - Harrison Zheng - Devin White, United States
-	<br> <a> Privacy Policy </a> <!-- Link for Privacy Policy page goes here -->
-	<br>
-</footer>
+<php?
+      include "SCfooter.php";
+?>
 </body>
 </html>
