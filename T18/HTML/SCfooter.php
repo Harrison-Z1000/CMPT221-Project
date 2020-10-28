@@ -15,6 +15,5 @@
 				echo "<br> This Website is currently at: <a href='Change.php'> V2.0 </a>";
 				echo "<br>  Privacy Policy";
 	echo "</footer>";
+//END OF FILE
 ?>
-
-// END OF FILE
