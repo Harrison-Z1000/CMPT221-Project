@@ -82,12 +82,12 @@ Sunset Cruises features the most complete selection of onboard modern and comfor
 
 <!-- Grid with Boats -->
 <div class="grid-container">
-	<div style="background-image: url(Catamaran.jpg);"><p><a href="Catamaran.html"> Catamaran </a></p></div>
-	<div style="background-image: url(Sunseeker.jpg);"><p><a href="Sunseeker88.html"> Sunseeker 88 </a> </p></div>
-	<div style="background-image: url(Trimaran.jpg);"><p><a href="Trimaran.html"> Trimaran </a></p></div>
-	<div style="background-image: url(Unbridled.jpg);"><p><a href="Unbridled.html"> Unbridled </a></p></div>
-	<div style="background-image: url(Amarula.jpg);"><p style="background-color: rgb(0,0,0,.2);"><a href="Amarula.html"> Amarula Sun </a></p></div>
-	<div style="background-image: url(SeaVoyager.jpg);"><p><a href="SeaVoyager.html"> Sea Voyager 223 </a></p></div>
+	<div style="background-image: url(Catamaran.jpg);"><p><a href="Catamaran.php"> Catamaran </a></p></div>
+	<div style="background-image: url(Sunseeker.jpg);"><p><a href="Sunseeker88.php"> Sunseeker 88 </a> </p></div>
+	<div style="background-image: url(Trimaran.jpg);"><p><a href="Trimaran.php"> Trimaran </a></p></div>
+	<div style="background-image: url(Unbridled.jpg);"><p><a href="Unbridled.php"> Unbridled </a></p></div>
+	<div style="background-image: url(Amarula.jpg);"><p style="background-color: rgb(0,0,0,.2);"><a href="Amarula.php"> Amarula Sun </a></p></div>
+	<div style="background-image: url(SeaVoyager.jpg);"><p><a href="SeaVoyager.php"> Sea Voyager 223 </a></p></div>
 </div>
 <br> <br>
 
