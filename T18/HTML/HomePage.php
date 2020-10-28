@@ -92,6 +92,8 @@
 <body style="background-color: lightgray;">
 <!--     Body of Webpage     -->
 
+<?php require ("../connect_db.php"); ?>
+
 <!---     Nar Bar     -->
 <div class="header">
 
