@@ -6,9 +6,10 @@
 /* Script File V1(14-Oct-2020) - Initial Creation of Tables with initial Users, Products, and Suppliers.
                V2(18-Oct-2020) - Updated the name of all tables.
                                - "img_file" attribute was added to the Cabins table.
-                               - "cruise_ID" is now also located in Cabins table - it is acting as a FK. */
+                               - "cruise_ID" is now also located in Cabins table - it is acting as a FK.
+			   V3(12-Nov-2020) - "cabin_active" attribute was added to the Cabins table and sample data was adjusted accordingly.
 
-/* Script File currently at V2. */
+/* Script File currently at V3. */
 
 USE site_db;
 
@@ -41,7 +42,8 @@ CREATE TABLE T18_Cabins (
     cabin_description VARCHAR(100),
     cabin_deck ENUM("Main", "Lower", "Upper"),
     cruise_ID INT(100), /* Wouldn't this be a foreign key? */
-    image_file VARCHAR(100)
+    image_file VARCHAR(100),
+	cabin_active ENUM("Y", "N") NOT NULL /* V3 Attribute added to T18_Cabins */
 );
 
 
@@ -90,13 +92,13 @@ INSERT INTO T18_Cruise (cruise_ID, cruise_name, number_of_cabins, cruise_capacit
 
 
 /* Add at least two cabins(products) for each supplier. */
-INSERT INTO T18_Cabins 
-    VALUES (1, "Double", 4000, "Available", "Cabin for two aboard the Trimaran", "Lower", 1, "image file location"), 
-    (2, "Suite", 6000, "Available", "Cabin for a whole family or a group of friends", "Main", 1, "image file location"),
-    (3, "Double", 4500, "Not Available", "Perfect Cabin for couples", "Upper", 2, "image file location"), 
-    (4, "Suite", 4500, "Not Available", "Great Cabin for the whole family", "Upper", 2, "image file location"),
-    (5, "Single", 3000, "On Hold", "Perfect Cabin for lone travelers", "Lower", 3, "image file location"),
-    (6, "Double", 2000, "Available", "Great cabin for a couples get away", "Main", 3, "image file location"); 
+INSERT INTO T18_Cabins /* V3 Added value for the cabin_active column in each row */
+    VALUES (1, "Double", 4000, "Available", "Cabin for two aboard the Trimaran", "Lower", 1, "image file location", "Y"), 
+    (2, "Suite", 6000, "Available", "Cabin for a whole family or a group of friends", "Main", 1, "image file location", "Y"),
+    (3, "Double", 4500, "Not Available", "Perfect Cabin for couples", "Upper", 2, "image file location", "N"), 
+    (4, "Suite", 4500, "Not Available", "Great Cabin for the whole family", "Upper", 2, "image file location", "N"),
+    (5, "Single", 3000, "On Hold", "Perfect Cabin for lone travelers", "Lower", 3, "image file location", "Y"),
+    (6, "Double", 2000, "Available", "Great cabin for a couples get away", "Main", 3, "image file location", "Y");
 
 
 SELECT * FROM T18_Users;
