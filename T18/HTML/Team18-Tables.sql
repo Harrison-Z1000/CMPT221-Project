@@ -35,7 +35,7 @@ CREATE TABLE T18_Users (
 
 /* Create table with attributes and modifiers for -Products(Cabins)- */
 CREATE TABLE T18_Cabins (
-    cabin_ID INT(100) PRIMARY KEY,
+    cabin_ID INT(100) PRIMARY KEY auto_increment,
     cabin_type ENUM("Single", "Double", "Suite"),
     cabin_price INT,
     cabin_availability ENUM("Available", "Not Available", "On Hold") NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE T18_Cabins (
     cabin_deck ENUM("Main", "Lower", "Upper"),
     cruise_ID INT(100), /* Wouldn't this be a foreign key? */
     image_file VARCHAR(100),
-	cabin_active ENUM("Y", "N") NOT NULL /* V3 Attribute added to T18_Cabins */
+	cabin_active ENUM("Y", "N") NOT NULL DEFAULT "Y" /* V3 Attribute added to T18_Cabins */
 );
 
 
@@ -95,10 +95,10 @@ INSERT INTO T18_Cruise (cruise_ID, cruise_name, number_of_cabins, cruise_capacit
 INSERT INTO T18_Cabins /* V3 Added value for the cabin_active column in each row */
     VALUES (1, "Double", 4000, "Available", "Cabin for two aboard the Trimaran", "Lower", 1, "image file location", "Y"), 
     (2, "Suite", 6000, "Available", "Cabin for a whole family or a group of friends", "Main", 1, "image file location", "Y"),
-    (3, "Double", 4500, "Not Available", "Perfect Cabin for couples", "Upper", 2, "image file location", "N"), 
-    (4, "Suite", 4500, "Not Available", "Great Cabin for the whole family", "Upper", 2, "image file location", "N"),
-    (5, "Single", 3000, "On Hold", "Perfect Cabin for lone travelers", "Lower", 3, "image file location", "Y"),
-    (6, "Double", 2000, "Available", "Great cabin for a couples get away", "Main", 3, "image file location", "Y");
+    (3, "Double", 4500, "Not Available", "Perfect cabin for couples", "Upper", 2, "image file location", "N"), 
+    (4, "Suite", 4500, "Not Available", "Great cabin for the whole family", "Upper", 2, "image file location", "N"),
+    (5, "Single", 3000, "On Hold", "Perfect cabin for lone travelers", "Lower", 3, "image file location", "Y"),
+    (6, "Double", 2000, "Available", "Great cabin for a couple's get-away", "Main", 3, "image file location", "Y");
 
 
 SELECT * FROM T18_Users;
