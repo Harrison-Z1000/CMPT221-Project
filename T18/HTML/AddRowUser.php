@@ -2,7 +2,7 @@
 
 <!--
      File that adds new Cruises to the table
-     Created by Oliver Wilson 9-Nov-2020
+     Created by Devin White 15-Nov-2020
 -->
 
 <!--          Header         -->
