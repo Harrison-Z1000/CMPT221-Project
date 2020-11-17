@@ -110,6 +110,7 @@
 		$email = 			      trim($_POST["email"]);
 		$active = 		  		trim($_POST["active"]);
 		$type = 		    		trim($_POST["type"]);
+		$date =             trim($_POST["date"]);
 	}
 	else {
 		$username = $password = $email = $active = $type =  "";
@@ -154,8 +155,9 @@
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form><br><br><br><br><br><br><br><br><br><br><br><br>";
 
-		$q="INSERT INTO T18_Users (user_name , user_password, user_email, user_active, employee_type)" .
-				"VALUES('$username', '$password', '$email', '$active', '$type');";
+		date_default_timezone_set('America/New_York');
+		$q="INSERT INTO T18_Users (user_name , user_password, user_email, user_active, employee_type, creation_date)" .
+				"VALUES('$username', '$password', '$email', '$active', '$type','".date('Y-m-d h-i-s')."');";
 		$r=mysqli_query($dbc, $q);
 
 		// Check query return code
@@ -174,8 +176,8 @@
 		// When SUBMIT is pressed, browser loads the ACTION file
 		echo "<form style='background-color: rgb(0,0,0,.4); color: white;' action='AddRowUser.php' method='POST'>";
 		echo "<fieldset>";
-			echo "<br> User Name: 						<input type='text' name='username'>";
-			echo "<br> Password:  			<input type='password' name='password'>";
+			echo "<br> User Name: 						<input type='text' name='username' value=$username>";
+			echo "<br> Password:  			<input type='password' name='password' value=''>";
 			echo "<br> Email:					<input type='email' name='email'>";
 			echo "<br> Is the User active?: 		<select name='active'>";
 			echo "<option value='Y'> Yes </option>";
@@ -185,6 +187,7 @@
 			echo "<option value='admin'> Admin </option>";
 			echo "<option value='employee'> Employee </option>";
 			echo "</select>";
+			echo "<br> Date:  <input type='date' name='date'>";
 			echo "<br> <input type='submit'>";
 
 		echo "</fieldset>";
@@ -212,4 +215,5 @@
 
 </body>
 </html>
+
 
