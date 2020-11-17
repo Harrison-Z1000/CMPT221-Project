@@ -127,7 +127,7 @@
 		else if ($username == "") {
 			$error_message = "Make sure to enter the User Name.";
 		}
-		else if ($password < 6) {
+		else if (strlen($password) < 6) {
 			$error_message = "The password be 6 or more characters.";
 		}
 		else if ($email == "") {
