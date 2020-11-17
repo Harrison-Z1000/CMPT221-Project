@@ -152,7 +152,7 @@
 
 		echo "<h2> Data was entered Successfully! </h2>";
 
-		// Button that takes you back to Cruises table
+		// Button that takes you back to User table
 		echo "<form action='AdminUserTable.php'>";
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form><br><br><br><br><br><br><br><br><br><br><br><br>";
@@ -200,7 +200,7 @@
 		echo "</p>";
 
 
-		// Button that takes you back to Cruises table
+		// Button that takes you back to User table
 		echo "<form action='AdminUserTable.php'>";
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form>";
