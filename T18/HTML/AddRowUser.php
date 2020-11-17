@@ -2,7 +2,7 @@
 
 <!--
      File that adds new Cruises to the table
-     Created by Devin White 15-Nov-2020
+     Created by Oliver Wilson 9-Nov-2020
 -->
 
 <!--          Header         -->
@@ -94,7 +94,7 @@
 ?>
 
 <?php
-	require ("../connect_db.php");  // Connects to database site_db
+	require ("connect_db.php");  // Connects to database site_db
 ?>
 
 <?php
@@ -110,10 +110,9 @@
 		$email = 			      trim($_POST["email"]);
 		$active = 		  		trim($_POST["active"]);
 		$type = 		    		trim($_POST["type"]);
-		$date =             trim($_POST["date"]);
 	}
 	else {
-		$username = $password = $email = $active = $type = $date = "";
+		$username = $password = $email = $active = $type =  "";
 	}
 
 
@@ -127,8 +126,8 @@
 		else if ($username == "") {
 			$error_message = "Make sure to enter the User Name.";
 		}
-		else if (strlen($password) < 6) {
-			$error_message = "The password be 6 or more characters.";
+		else if (strlen($password)<6) {
+			$error_message = "The password must be 6 or more characters.";
 		}
 		else if ($email == "") {
 			$error_message = "Make sure to enter Email.";
@@ -139,9 +138,7 @@
 		else if ($type == "") {
 			$error_message = "Make sure to specify type.";
 		}
-		else if ($date == "") {
-			$error_message = "Make sure to specify date.";
-		}
+
 
 
 
@@ -152,13 +149,13 @@
 
 		echo "<h2> Data was entered Successfully! </h2>";
 
-		// Button that takes you back to User table
+		// Button that takes you back to user table
 		echo "<form action='AdminUserTable.php'>";
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form><br><br><br><br><br><br><br><br><br><br><br><br>";
 
-		$q="INSERT INTO T18_Users (user_name , user_password, user_email, user_active, employee_type, creation_date)" .
-				"VALUES('$username', '$password', '$email', '$active', '$type', $date);";
+		$q="INSERT INTO T18_Users (user_name , user_password, user_email, user_active, employee_type)" .
+				"VALUES('$username', '$password', '$email', '$active', '$type');";
 		$r=mysqli_query($dbc, $q);
 
 		// Check query return code
@@ -177,7 +174,7 @@
 		// When SUBMIT is pressed, browser loads the ACTION file
 		echo "<form style='background-color: rgb(0,0,0,.4); color: white;' action='AddRowUser.php' method='POST'>";
 		echo "<fieldset>";
-			echo "<br> User Name: 						<input type='text' name='name'>";
+			echo "<br> User Name: 						<input type='text' name='username'>";
 			echo "<br> Password:  			<input type='password' name='password'>";
 			echo "<br> Email:					<input type='email' name='email'>";
 			echo "<br> Is the User active?: 		<select name='active'>";
@@ -188,7 +185,6 @@
 			echo "<option value='admin'> Admin </option>";
 			echo "<option value='employee'> Employee </option>";
 			echo "</select>";
-			echo "<br> Date  <input type='date' name='date'>" ;
 			echo "<br> <input type='submit'>";
 
 		echo "</fieldset>";
@@ -200,7 +196,7 @@
 		echo "</p>";
 
 
-		// Button that takes you back to User table
+		// Button that takes you back to Cruises table
 		echo "<form action='AdminUserTable.php'>";
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form>";
@@ -216,3 +212,4 @@
 
 </body>
 </html>
+
