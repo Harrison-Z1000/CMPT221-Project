@@ -98,7 +98,7 @@
 ?>
 
 <?php
-	require ("../connect_db.php");  // Connects to database site_db
+	require ("connect_db.php");  // Connects to database site_db
 ?>
 
 <?php
@@ -108,7 +108,7 @@
 	/*
 		Query to get Columns from the Users Table
 	*/
-	$table="Team18_Users";
+	$table="T18_Users";
 	$q="EXPLAIN $table";
 	$r=mysqli_query($dbc, $q);
 
@@ -184,4 +184,3 @@
 </html>
 
 <!-- END OF FILE -->
-
