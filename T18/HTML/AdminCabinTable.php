@@ -3,8 +3,9 @@
 <!-- 
     Filename: AdminCabinTable - Displays the contents of the T18_Cabins (products) table 
     v1.0  10/28/2020 HZ Created original program
-	v1.2  11/02/2020 HZ Added FILE_AUTHOR and formatted for best practices
+	v1.2  11/02/2020 HZ Formatted for best practices
 	v2.0  11/12/2020 HZ Added sorting feature for key columns and link to AddRowCabin page
+	v3.0  11/18/2020 HZ Added link to deactivate cabins
 -->
 
 <!--          Header         -->
@@ -100,24 +101,26 @@
 	echo "<table border = 1>";
 		echo "<tr>";
 	
-	/* 
-		Query to get columns from the Cabins table
-	*/
+	/**********************************************************************
+	*	Query to get columns from the Cabins table
+	**********************************************************************/
 	$table = "T18_Cabins";
 	$q = "EXPLAIN $table";
 	$r = mysqli_query($dbc, $q);
 	
-	// Set $sort_type to passed input from the form 
+	/**********************************************************************
+	*	Set $sort_type to passed input from the form 
+	**********************************************************************/
 	if (isset($_POST['sort'])) {
 		$sort_type = $_POST['sort'];
 	}
 	else {
 		$sort_type = "cabin_ID";
 	}
-	
-	/* 
-		Creates header row of the table with column names
-	*/	
+		
+	/**********************************************************************
+	*	Creates header row of the table with column names
+	**********************************************************************/
 	if ($r) {
 		while ($row=mysqli_fetch_array($r, MYSQLI_NUM)) {
 			echo "<TH>" . $row[0] . "</TH>";
@@ -128,22 +131,24 @@
 		echo "<p>" . mysqli_error($dbc) . "</p>";
 	}
 								
-	/*
-		Query to get data from Cabins table 
-	*/
+	/**********************************************************************
+	*	Query to get data from Cabins table
+	**********************************************************************/		
 	$q = "SELECT * FROM $table 
+			WHERE cabin_active='Y'
 			ORDER BY $sort_type";
 	$r = mysqli_query($dbc, $q);
 	
 		echo "<tr>";
-		
-	/*
-		Populates table with data from Cabins table
-	*/
+
+	/**********************************************************************
+	*	Populates table with data from Cabins table
+	**********************************************************************/		
 	if ($r) {
 		while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
 			for ($x = 0; $x < 9; $x++) {
-				if ($x == 9) {
+				if ($x == 8) {
+					echo "<td> <a href='DeleteCabinRow.php?cabin_ID=" . $row[0] . "'> DEACTIVATE </a> </td>";
 					break;
 				}
 				echo "<td>" . $row[$x] . "</td>";
@@ -155,7 +160,7 @@
 	
 	/**********************************************************************
 	*	Button to re-run this same file, sort by may be used
-	**********************************************************************/ 
+	**********************************************************************/		
 	echo "<form style = 'color: white;' action = 'AdminCabinTable.php' method = 'POST'>";
 		echo "<br> <input type = 'submit' value = 'SORT BY:'>";
 		echo "<input type = 'radio' name = 'sort' value = 'cabin_ID'>				Cabin ID";
@@ -164,10 +169,11 @@
 		echo "<input type = 'radio' name = 'sort' value = 'cabin_availability'> 	Availability";
 		echo "<input type = 'radio' name = 'sort' value = 'cabin_deck'>				Deck";
 		echo "<input type = 'radio' name = 'sort' value = 'cruise_ID'>				Cruise ID";
-		echo "<input type = 'radio' name = 'sort' value = 'cabin_active'>			Active";
 	echo "</form>";
 
-	// Button that takes you to the page to add a cabin
+	/**********************************************************************
+	*	Button that takes you to the page to add a cabin
+	**********************************************************************/		
 	echo "<br><form action='AddRowCabin.php'>";
 		echo "<button class='button button1' onclick=> Add a New Cabin </button>";
 	echo "</form>";	

@@ -100,7 +100,7 @@ INSERT INTO T18_Cabins (cabin_ID, cabin_type, cabin_price, cabin_availability, c
     (3, "Double", 4500, "Not Available", "Perfect Cabin for couples", "Upper", 2), 
     (4, "Suite", 4500, "Not Available", "Great Cabin for the whole family", "Upper", 2),
     (5, "Single", 3000, "On Hold", "Perfect Cabin for lone travelers", "Lower", 3),
-    (6, "Double", 2000, "Available", "Great cabin for a couples get away", "Main", 3); 
+    (6, "Double", 2000, "Available", "Great cabin for a couple's getaway", "Main", 3); 
 
 
 SELECT * FROM T18_Users;

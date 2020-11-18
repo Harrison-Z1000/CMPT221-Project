@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <!----------------------------------------------------------------------------------
---	Filename: AddRowCabin - Adds new cabins to the Cabins table
---
---  v1.0  11/12/2020 HZ Completed original program and formatted for best practices
+	Filename: AddRowCabin - Adds new cabins to the Cabins table
+
+	v1.0  11/12/2020 HZ Completed original program and formatted for best practices
+	v1.2  11/18/2020 HZ Updated input fields to utilize sticky forms
 <---------------------------------------------------------------------------------->
 
 <!--          Header         -->
@@ -118,8 +119,8 @@
 	if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		$error_message = "To add a new cabin, please fill in all the fields above and press SUBMIT";
 	}
-	else if ($price < 500) {
-		$error_message = "Cabins cost a minimum of $500.";
+	else if ($price < 300) {
+		$error_message = "Cabins cost a minimum of $300.";
 	}
 	else if ($price > 10000) {
 		$error_message = "Cabins cost a maximum of $10000.";
@@ -166,28 +167,25 @@
 		echo "<form style='background-color: rgb(0,0,0,.4); color: white;' action='AddRowCabin.php' method='POST'>";
 		echo "<fieldset>";
 			echo "<br> Type: 						<select name='type'>";
-														echo "<option value='Single'> Single </option>";
+														echo "<option value='Single' selected> Single </option>";
 														echo "<option value='Double'> Double </option>";
 														echo "<option value='Suite'> Suite </option>";
 													echo "</select>";
-			echo "<br> Price:  						<input type='text' name='price'>";
+			echo "<br> Price ($):  					<input type='number' name='price' value=0>";
 			echo "<br> Availability: 				<select name='availability'>";
-														echo "<option value='Available'> Available </option>";
+														echo "<option value='Available' selected> Available </option>";
 														echo "<option value='Not Available'> Not Available </option>";
 														echo "<option value='On Hold'> On Hold </option>";
 													echo "</select>";
-			echo "<br> Description: 				<input type='text' name='description'>";
+			echo "<br> Description: 				<input type='text' name='description' value=$description>";
 			echo "<br> Deck: 						<select name='deck'>";
-														echo "<option value='Main'> Main </option>";
+														echo "<option value='Main' selected> Main </option>";
 														echo "<option value='Lower'> Lower </option>";
 														echo "<option value='Upper'> Upper </option>";
 													echo "</select>";
-			echo "<br> Cruise ID: 					<input type='text' name='cruise_id'>";
-			echo "<br> Image (will be available in a later version): 			<select name='image'>";
-																					echo "<option value='image file location'> image file location </option>";
-																				echo "</select>";
+			echo "<br> Cruise ID: 					<input type='number' name='cruise_id' value=1>";
 			echo "<br> Is the cabin active?: 		<select name='active'>";
-														echo "<option value='Y'> Yes </option>";
+														echo "<option value='Y' selected> Yes </option>";
 														echo "<option value='N'> No </option>";
 													echo "</select>";
 			echo "<br> <input type='submit'>";
@@ -200,7 +198,7 @@
 		echo "</p>";
 		
 		
-		// Button that takes you to the page to add a cabin
+		// Button that takes you back to Cabins table
 		echo "<form action='AdminCabinTable.php'>";
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form>";

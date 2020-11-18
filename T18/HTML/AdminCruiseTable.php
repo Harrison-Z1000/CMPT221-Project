@@ -109,7 +109,7 @@
 	
 
 	/**********************************************************************
-	*	Query to get Columns from the User Table
+	*	Query to get Columns from the Cruise Table
 	**********************************************************************/ 
 	$table="T18_Cruise";
 	$q="EXPLAIN $table";
@@ -136,7 +136,7 @@
 				
 				
 	/**********************************************************************
-	*	Query to get Data from User Table
+	*	Query to get Data from Cruise Table
 	**********************************************************************/ 
 	$q="SELECT * FROM $table
 			WHERE cruise_active='Y'
@@ -148,7 +148,7 @@
 		while ($row=mysqli_fetch_array($r, MYSQLI_NUM)) {
 			for ($x=0; $x < 7; $x++) {
 				if ($x == 6) {
-					echo "<td> <a href='DeleteRow.php?cruise_ID=" . $row[0] . "'> DEACTIVATE </a> </td>";
+					echo "<td> <a href='DeleteCruiseRow.php?cruise_ID=" . $row[0] . "'> DEACTIVATE </a> </td>";
 					break;
 				}
 				echo "<td>" . $row[$x] . "</td>";
@@ -173,7 +173,7 @@
 
 	
 	/*************************************************************************
-	*	Button ]that takes you to the 'add cruise' page
+	*	Button that takes you to the 'add cruise' page
 	*************************************************************************/
 	echo "<br><form action='AddRowCruise.php'>";
 		echo "<button class='button button1' onclick=> Add a New Cruise </button>";

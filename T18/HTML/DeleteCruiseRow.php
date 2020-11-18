@@ -115,7 +115,7 @@
 			// Check query return code  
 		if ($r ) {
 			echo "<p style='padding: 20px; margin: 15px; text-align: center; color: white;'>";
-				echo "Cruise has been Deactivated!"; 
+				echo "Cruise $id has been Deactivated!"; 
 			echo "</p>";
 		}  	   
 		else {     
@@ -125,7 +125,7 @@
 	
 	// Button that takes you back to Cruises table
 	echo "<form action='AdminCruiseTable.php'>";
-		echo "<button class='button button1' onclick=> <-- Back to Cruise Table </button>";
+		echo "<button class='button button1' onclick=> <-- Back </button>";
 	echo "</form>";
 ?>
 
