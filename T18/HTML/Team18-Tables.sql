@@ -1,6 +1,6 @@
-/* Prolog 
+/* Prolog
     CMPT221 P05 - Create & Initialize Tables
-    Created by Team 18(Devin White, Oliver Wilson, and Harrison Zheng). 14 - October - 2020 
+    Created by Team 18(Devin White, Oliver Wilson, and Harrison Zheng). 14 - October - 2020
     This Script File goes hand in hand with the HTML Home Page V2. */
 
 /* Script File V1(14-Oct-2020) - Initial Creation of Tables with initial Users, Products, and Suppliers.
@@ -8,7 +8,7 @@
                                - "img_file" attribute was added to the Cabins table.
                                - "cruise_ID" is now also located in Cabins table - it is acting as a FK.
 			   V3(12-Nov-2020) - "cabin_active" attribute was added to the Cabins table and sample data was adjusted accordingly.
-
+         V4(17-Nov-2020) - "user_active" moved location, as well as all 'insert into' t18_users commands. 
 /* Script File currently at V3. */
 
 USE site_db;
@@ -25,11 +25,11 @@ CREATE TABLE T18_Users (
     user_name VARCHAR(20) NOT NULL,
     user_password VARCHAR(50) NOT NULL,
     user_email VARCHAR(30),
-    user_active ENUM("Y", "N") NOT NULL,
     employee_type ENUM ("Admin", "Employee") NOT NULL,
     creation_date DATE,
     last_updated_password DATE,
-    hash_type VARCHAR(20) DEFAULT("None")
+    hash_type VARCHAR(20) DEFAULT("None"),
+    user_active ENUM("Y", "N") NOT NULL
 );
 
 
@@ -64,21 +64,21 @@ EXPLAIN T18_Cruise;
 
 
 /* Add an entry for all three team members, and identify them as ADMINs. */
-INSERT INTO T18_Users 
-    VALUES (1, "Devin", "devinpassword", "devin.white1@marist.edu", "Y", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "None"),
-    (2, "Oliver", "oliverpassword", "oliver.wilson1@marist.edu", "Y", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "None"),
-    (3, "Harrison", "harrisonpassword", "harrison.zheng1@marist.edu", "Y", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "None");
+INSERT INTO T18_Users
+    VALUES (1, "Devin", "devinpassword", "devin.white1@marist.edu", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "None", "Y"),
+    (2, "Oliver", "oliverpassword", "oliver.wilson1@marist.edu", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "None", "Y"),
+    (3, "Harrison", "harrisonpassword", "harrison.zheng1@marist.edu", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "None", "Y");
 
 
 /* Add a User entry for Andrew Tokash.*/
-INSERT INTO T18_Users (user_name, user_password, user_active, employee_type)
-    VALUES ("atokash", "ADMIN", "Y", "Admin");
+INSERT INTO T18_Users (user_name, user_password, employee_type, user_active)
+    VALUES ("atokash", "ADMIN", "Admin", "Y");
 
 
 /* Add entries for two dummy users that are NOT ADMIN. */
-INSERT INTO T18_Users (user_name, user_password, user_active, employee_type)
-    VALUES ("John", "password", "Y", "Employee"), 
-    ("Alex", "password", "Y", "Employee");
+INSERT INTO T18_Users (user_name, user_password, employee_type, user_active)
+    VALUES ("John", "password", "Employee", "Y"),
+    ("Alex", "password", "Employee", "Y");
 
 
 /* Add at least two different cruises(suppliers). */
@@ -93,9 +93,9 @@ INSERT INTO T18_Cruise (cruise_ID, cruise_name, number_of_cabins, cruise_capacit
 
 /* Add at least two cabins(products) for each supplier. */
 INSERT INTO T18_Cabins /* V3 Added value for the cabin_active column in each row */
-    VALUES (1, "Double", 4000, "Available", "Cabin for two aboard the Trimaran", "Lower", 1, "image file location", "Y"), 
+    VALUES (1, "Double", 4000, "Available", "Cabin for two aboard the Trimaran", "Lower", 1, "image file location", "Y"),
     (2, "Suite", 6000, "Available", "Cabin for a whole family or a group of friends", "Main", 1, "image file location", "Y"),
-    (3, "Double", 4500, "Not Available", "Perfect cabin for couples", "Upper", 2, "image file location", "N"), 
+    (3, "Double", 4500, "Not Available", "Perfect cabin for couples", "Upper", 2, "image file location", "N"),
     (4, "Suite", 4500, "Not Available", "Great cabin for the whole family", "Upper", 2, "image file location", "N"),
     (5, "Single", 3000, "On Hold", "Perfect cabin for lone travelers", "Lower", 3, "image file location", "Y"),
     (6, "Double", 2000, "Available", "Great cabin for a couple's get-away", "Main", 3, "image file location", "Y");
@@ -104,5 +104,4 @@ INSERT INTO T18_Cabins /* V3 Added value for the cabin_active column in each row
 SELECT * FROM T18_Users;
 SELECT * FROM T18_Cruise;
 SELECT * FROM T18_Cabins;
-
 
