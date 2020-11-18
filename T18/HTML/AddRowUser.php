@@ -179,15 +179,15 @@
 			echo "<br> User Name: 						<input type='text' name='username' value=$username>";
 			echo "<br> Password:  			<input type='password' name='password' value=''>";
 			echo "<br> Email:					<input type='email' name='email'>";
-			echo "<br> Is the User active?: 		<select name='active'>";
-			echo "<option value='Y'> Yes </option>";
-			echo "<option value='N'> No </option>";
 			echo "</select>";
 			echo "<br> Employee type: 		<select name='type'>";
 			echo "<option value='admin'> Admin </option>";
 			echo "<option value='employee'> Employee </option>";
 			echo "</select>";
 			echo "<br> Date:  <input type='date' name='date'>";
+			echo "<br> Is the User active?: 		<select name='active'>";
+			echo "<option value='Y'> Yes </option>";
+			echo "<option value='N'> No </option>";
 			echo "<br> <input type='submit'>";
 
 		echo "</fieldset>";
