@@ -131,10 +131,11 @@
 	}
 
 
-	/*
-		Query to get Data from Users Table
-	*/
+	/**********************************************************************
+	*	Query to get Data from User Table
+	**********************************************************************/
 	$q="SELECT * FROM $table
+			WHERE user_active='Y'
 			ORDER BY $sort_type";
 	$r=mysqli_query($dbc, $q);
 
@@ -142,7 +143,8 @@
 	if ($r) {
 		while ($row=mysqli_fetch_array($r, MYSQLI_NUM)) {
 			for ($x=0; $x < 9; $x++) {
-				if ($x==9) {
+				if ($x == 8) {
+					echo "<td> <a href='DeleteUserRow.php?user_ID=" . $row[0] . "'> DEACTIVATE </a> </td>";
 					break;
 				}
 				echo "<td>" . $row[$x] . "</td>";
@@ -158,13 +160,12 @@
 
 	echo "<form style='color: white;' action='AdminUserTable.php' method='POST'>";
 		echo "<br> <input type='submit' value='SORT BY:'>";
-		echo "<input type='radio' name='sort' value='User_Id'>			ID";
+		echo "<input type='radio' name='sort' value='User_Id'>		  	ID";
 		echo "<input type='radio' name='sort' value='User_name'>			Name";
-		echo "<input type='radio' name='sort' value='User_Password'>		Password";
-		echo "<input type='radio' name='sort' value='User_email'>		Email";
-		echo "<input type='radio' name='sort' value='User_active'>		Active?";
-		echo "<input type='radio' name='sort' value='employee_type'>		Type";
-		echo "<input type='radio' name='sort' value='creation_date'>		Date";
+		echo "<input type='radio' name='sort' value='User_Password'>	Password";
+		echo "<input type='radio' name='sort' value='User_email'>	  	Email";
+		echo "<input type='radio' name='sort' value='employee_type'>	Type";
+		echo "<input type='radio' name='sort' value='creation_date'>	Date";
 	echo "</form>";
 
 
@@ -184,3 +185,4 @@
 </html>
 
 <!-- END OF FILE -->
+
