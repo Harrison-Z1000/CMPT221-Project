@@ -188,6 +188,7 @@
 			echo "<br> Is the User active?: 		<select name='active'>";
 			echo "<option value='Y'> Yes </option>";
 			echo "<option value='N'> No </option>";
+			echo "</select>";
 			echo "<br> <input type='submit'>";
 
 		echo "</fieldset>";
