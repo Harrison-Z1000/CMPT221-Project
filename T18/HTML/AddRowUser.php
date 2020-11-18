@@ -94,7 +94,7 @@
 ?>
 
 <?php
-	require ("connect_db.php");  // Connects to database site_db
+	require ("../connect_db.php");  // Connects to database site_db
 ?>
 
 <?php
