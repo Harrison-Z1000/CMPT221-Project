@@ -1,5 +1,5 @@
 /* Prolog 
-    CMPT221 P05 - Create & Initialize Tables
+    CMPT221 - Create & Initialize Tables
     Created by Team 18(Devin White, Oliver Wilson, and Harrison Zheng). 14 - October - 2020 
     This Script File goes hand in hand with the HTML Home Page V2. */
 
@@ -100,11 +100,10 @@ INSERT INTO T18_Cabins (cabin_ID, cabin_type, cabin_price, cabin_availability, c
     (3, "Double", 4500, "Not Available", "Perfect Cabin for couples", "Upper", 2), 
     (4, "Suite", 4500, "Not Available", "Great Cabin for the whole family", "Upper", 2),
     (5, "Single", 3000, "On Hold", "Perfect Cabin for lone travelers", "Lower", 3),
-    (6, "Double", 2000, "Available", "Great cabin for a couple's getaway", "Main", 3); 
+    (6, "Double", 2000, "Available", "Great cabin for a couples get away", "Main", 3); 
 
 
 SELECT * FROM T18_Users;
 SELECT * FROM T18_Cruise;
 SELECT * FROM T18_Cabins;
-
 
