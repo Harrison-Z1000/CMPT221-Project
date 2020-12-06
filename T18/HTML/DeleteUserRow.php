@@ -102,7 +102,7 @@
 		$id= $_GET["user_ID"];
 	}
 	else {
-		$display_message = "No Id Specified!";
+		$display_message = "No ID Specified!";
 	}
 
 
@@ -115,7 +115,7 @@
 		// Check query return code
 		if ($r ) {
 			echo "<p style='padding: 20px; margin: 15px; text-align: center; color: white;'>";
-				echo "User has been Deactivated!";
+				echo "User $id has been Deactivated!";
 			echo "</p>";
 		}
 		else {
