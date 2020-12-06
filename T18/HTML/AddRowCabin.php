@@ -166,7 +166,7 @@
 											echo "<option value='Double'> Double </option>";
 											echo "<option value='Suite'> Suite </option>";
 										echo "</select>";
-			echo "<br> Price:  			<input type='text' name='price'>";
+			echo "<br> Price:  			<input type='number' name='price'>";
 			echo "<br> Availability: 	<select name='availability'>";
 											echo "<option value='Available'> Available </option>";
 											echo "<option value='Not Available'> Not Available </option>";
@@ -177,7 +177,7 @@
 											echo "<option value='Lower'> Lower </option>";
 											echo "<option value='Upper'> Upper </option>";
 										echo "</select>";
-			echo "<br> Cruise ID: 		<input type='text' name='cruise_id'>";
+			echo "<br> Cruise ID: 		<input type='number' name='cruise_id'>";
 
 			echo "<br> Active?: 		<select name='active'>";
 											echo "<option value='Y'> Yes </option>";
