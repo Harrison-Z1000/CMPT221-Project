@@ -154,7 +154,6 @@
 	}
 	else {
 		echo "<h2> Add a New Cabin </h2>";  
-	}
 		
 		/**************************************************************************
 		* 		When SUBMIT is pressed, browser loads the ACTION code
@@ -198,6 +197,7 @@
 		echo "<form action='AdminCabinTable.php'>";
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form>";
+	}
 
 	echo "<br><br><br><br><br>";
 	echo "<hr>";
