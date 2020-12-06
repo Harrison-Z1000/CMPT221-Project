@@ -130,7 +130,7 @@
 		else if (strpos($username, "<") !== false) {
 			$error_message = "The '<' character is not allowed.";
 		}
-		else if (strlen($username) < 20) {
+		else if (strlen($username) > 20) {
 			$error_message = "Max Length is 20. Please try again";
 		}
 		else if (strlen($password)<3) {
