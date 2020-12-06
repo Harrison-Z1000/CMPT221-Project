@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+
+<!-- Filename: Employee Login Page
+     Created by Oliver Wilson 
+	 
+	 v1.0  12/04/2020 OW Initial page created and linked to other pages on the site
+	 v1.2  12/05/2020 HZ Formated for best practices and made other changes
+-->
 
 <!--          Header         -->
 <html lang="en">
@@ -20,7 +28,17 @@
 			font-size: 20px;
 			font-weight: 600;
 			}
-							  
+				
+		form { margin: 1px; 
+				padding: 7px;
+				background-color: rgb(0,0,0,.5);
+				border-radius: 100px;
+				font-size: 20px;
+				font-weight: 600;
+				text-align: center;
+				color: white;
+				}		
+		
 		h2 { text-align: center; 
 			 font-weight: 600;
 			 background-color: rgb(0,0,0,.1)
@@ -165,19 +183,10 @@
 						echo "<br>Welcome <b> $username </b>!";
 					echo "</p>";
 					
-					// Button that takes user to Home Page 
-					echo "<form action='HomePage.php'>";
-						echo "<button class='button button1' onclick=> Back to Home Page </button>";
-					echo "</form>";			
-
-					// Button that takes user to Admin Functions Page
-					echo "<form action='Admin.php'>";
-						echo "<button class='button button1' onclick=> Admin Functions </button>";
-					echo "</form>";
+					//v1.2 Directs user to admin table page after logging in
+					header("Location: Admin.php");	
+					exit();
 				}
-			}
-			else {
-				echo "LOL" . mysqli_error($dbc);
 			}
 	}
 	else {
@@ -185,12 +194,10 @@
 		 *		When SUBMIT is pressed, browser loads the ACTION file 
 		 **************************************************************************/
 		echo "<h2> Login to view User table and access admin functions </h2>";
-		echo "<form style='background-color: rgb(0,0,0,.4); color: white; action='LogIn.php' method='POST'>";
-		echo "<fieldset>";
+		echo "<form style='background-color: rgb(0,0,0,.5); color: white; action='LogIn.php' method='POST'>";
 			echo "<br> Username: 		<input type='text' name='username' value=$username>";
-			echo "<br> Password:  		<input type='text' name='password'>";
+			echo "<br> Password:  		<input type='password' name='password'>"; //v1.2 Changed field type to password 
 			echo "<br> <input type='submit'>";
-		echo "</fieldset>";
 		echo "</form>";
 		
 		echo "<p style='padding: 20px; margin: 15px; text-align: center; color: white; background-color: rgb(0,0,0,.5)'>";

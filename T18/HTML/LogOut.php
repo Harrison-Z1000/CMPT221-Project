@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+
+<!-- Filename: Logout Page
+	 
+	 v1.0  12/04/2020 OW Initial page created and linked to other pages on the site
+	 v1.2  12/05/2020 HZ Formated for best practices
+-->
+
 <!--          Header         -->
 <html lang="en">
 <head>
@@ -84,18 +92,12 @@
 
 <body style="background-color: lightgray;">
 
-<!---     Nar Bar     -->
-
-<!-- *********************************************************************
-	*	Log Out Page
-	*	Created by Oliver Wilson - 4-Dec-2020.
-	********************************************************************* -->
 <?php
 	//unset($_SESSION['login_status']);
 	require "SCnavbar.php"; 
 	require ("../connect_db.php");  // Connects to database site_db
 	
-	session_start();
+//	session_start();
 	unset($_SESSION["login_status"]);;
 	
 	// Display Login message
