@@ -94,7 +94,7 @@
 ?>
 
 <?php 
-	require ("../connect_db.php");  // Connects to database site_db
+	require ("../connect_db.php"); // Connect to site_db and set $dbc to use with mysql functions
 ?>
 
 <?php
@@ -129,6 +129,9 @@
 		// Error handler to avoid code injections
 		else if (strpos($name, "<") !== false) { 
 			$error_message = "The '<' character is not allowed. ";
+		}
+		else if (strlen($name) > 20) {
+			$error_message = "The Cruise name cannot be more than 20 characters long.";
 		}
 		else if ($cabins < 4) {
 			$error_message = "The Cruise must have 4 cabins as a minimum.";
@@ -223,7 +226,8 @@
 <br><br>
 <hr>
 <?php 
-	include "SCfooter.php"; // Includes the Sunset Cruises Footer
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 ?>
 <br>
 

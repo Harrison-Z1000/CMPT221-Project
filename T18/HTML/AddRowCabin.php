@@ -4,6 +4,8 @@
 --	Filename: AddRowCabin - Adds new cabins to the Cabins table
 --
 --  v1.0  11/12/2020 HZ Completed original program and formatted for best practices
+--  v1.2  12/05/2020 OW Changed input types and removed message
+--	v1.4  12/06/2020 HZ Added more error checking
 <---------------------------------------------------------------------------------->
 
 <!--          Header         -->
@@ -86,11 +88,11 @@
 	</style>
 </head>
 
-<body style = "background-color: lightgray;">
+<body style="background-color: lightgray;">
 
 <?php
 	require "SCnavbar.php"; // Includes the Sunset Cruises navigation bar
-	require ("../connect_db.php");  // Connects to database site_db
+	require ("../connect_db.php"); // Connect to site_db and set $dbc to use with mysql functions
 	
 	/**************************************************************************
 	*	Input Validation
@@ -125,6 +127,16 @@
 	else if ($cruise_id < 1) {
 		$error_message = "Cruise IDs must be greater than 0.";
 	}
+	else { // v1.4 Check the Cruise table for the ID entered
+		$q="SELECT * FROM T18_Cruise 
+				WHERE cruise_ID= $cruise_id;";
+		$r=mysqli_query($dbc, $q);
+		
+		// If cruise does not exist, prompt user to try again
+		if (mysqli_num_rows($r) < 1) {
+			$error_message = "Cruise ID does not match any of our records. Please enter a different Cruise ID.";
+		}
+	}
 
 	
 	/**************************************************************************
@@ -146,7 +158,7 @@
 		
 		// Check query return code
 		if ($r) {
-			echo "";
+			echo ""; // v1.2 Removed duplicate success message
 		}
 		else {
 			echo "<li>" . mysqli_error($dbc) . "</li>";
@@ -165,7 +177,7 @@
 											echo "<option value='Double'> Double </option>";
 											echo "<option value='Suite'> Suite </option>";
 										echo "</select>";
-			echo "<br> Price:  			<input type='number' name='price'>";
+			echo "<br> Price:  			<input type='number' name='price'>"; // v1.2 Changed Price input type to number
 			echo "<br> Availability: 	<select name='availability'>";
 											echo "<option value='Available'> Available </option>";
 											echo "<option value='Not Available'> Not Available </option>";
@@ -176,7 +188,7 @@
 											echo "<option value='Lower'> Lower </option>";
 											echo "<option value='Upper'> Upper </option>";
 										echo "</select>";
-			echo "<br> Cruise ID: 		<input type='number' name='cruise_id'>";
+			echo "<br> Cruise ID: 		<input type='number' name='cruise_id'>"; // v1.2 Changed Price input type to number
 
 			echo "<br> Active?: 		<select name='active'>";
 											echo "<option value='Y'> Yes </option>";
@@ -202,7 +214,8 @@
 	echo "<br><br><br><br><br>";
 	echo "<hr>";
 
-	include "SCfooter.php"; // Include the Sunset Cruises footer
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 	
 	echo "<br>";
 ?>

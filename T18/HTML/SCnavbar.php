@@ -30,7 +30,6 @@
 
 
 	session_start();
-	//unset($_SESSION['login_status']);
 	if (isset($_SESSION['login_status'])) {
 		$user_status = $_SESSION['login_status'];
 	}

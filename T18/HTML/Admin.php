@@ -67,9 +67,8 @@
 
 <body style="background-color: lightgray;">
 
-<!---     Nav Bar     -->
 <?php
-	require "SCnavbar.php"; 
+	require "SCnavbar.php";  // Includes the Sunset Cruises Navigation Bar
 ?>
 
 <?php
@@ -82,7 +81,7 @@
 		echo "</tr>";
 		  
 		echo "<tr>";
-			echo "<td> <a href='Sunset Cruises - Team18.pdf'> Design Document </a> </td>";
+			echo "<td> <a href='Team18-ProjectDocument.pdf'> Design Document </a> </td>";
 			echo "<td> Display team project document </td>";
 		echo "</tr>";
 		  
@@ -116,7 +115,8 @@
 
 <br><br><br><br><br>
 <hr>
-<?php 
+<?php
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR 
 	include "SCfooter.php"; 
 ?>
 <br>

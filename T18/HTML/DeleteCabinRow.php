@@ -90,7 +90,7 @@
 
 <?php
 	require "SCnavbar.php"; // Includes the Sunset Cruises navigation bar
-	require ("../connect_db.php");  // Connects to database site_db
+	require ("../connect_db.php");  // Connect to site_db and set $dbc to use with mysql functions
 
 	/**************************************************************************
 	* Set up a display/error message and get the passed "id"
@@ -130,7 +130,8 @@
 	echo "<br><br><br><br><br>";
 	echo "<hr>";
 
-	include "SCfooter.php"; // Include the Sunset Cruises footer
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 	
 	echo "<br>";
  ?>

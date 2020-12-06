@@ -45,9 +45,8 @@
 <!--  Body of webpage -->
 <body>
 
-<!---     Nar Bar     -->
 <?php
-	require "SCnavbar.php";
+	require "SCnavbar.php"; // Includes the Sunset Cruises Navigation Bar
 ?>
 
 <hr></hr>
@@ -64,7 +63,7 @@
   </tr>
 </table>
 
-<h2 style="color: white;">Check our availabiliy:</h2>
+<h2 style="color: white;">Check our availability:</h2>
 
 <table style="background-color: white;">
   <tr style="backgroud-color: white;">
@@ -76,6 +75,7 @@
 <br></br>
 <hr></hr>
 <?php 
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
 	include "SCfooter.php"; 
 ?>
 

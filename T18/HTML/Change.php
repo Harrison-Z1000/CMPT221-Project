@@ -109,6 +109,7 @@
 <br><br><br><br>
 <hr>
 <?php 
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
 	include "SCfooter.php"; 
 ?>
 <br>

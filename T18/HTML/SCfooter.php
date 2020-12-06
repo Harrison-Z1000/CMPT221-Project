@@ -3,9 +3,7 @@
 -->
 
 <?php
-
-	define("FILE_AUTHOR", "Oliver Wilson");
-	define("TEAM_MEMBERS", "Oliver Wilson, Devin White, Harrison Zheng");
+	define("FILE_AUTHOR", "Oliver Wilson, Devin White, Harrison Zheng");
 
 	echo "<footer style='font-size: 12px; text-align: center; color: grey;'> <small> DISCLAIMER! <br> This Website was made for educational purposes only as a way for the students developing this page to learn"; 
 				echo " the topics of Software Development II. By using this site you understand that no real cruises are being ";

@@ -106,9 +106,8 @@
 <body style="background-color: lightgray;">
 <!--     Body of Webpage     -->
 
-<!---     Nar Bar     -->
 <?php
-	require "SCnavbar.php";
+	require "SCnavbar.php"; // Includes the Sunset Cruises Navigation Bar
 ?>
 
 <div class="container">
@@ -157,6 +156,7 @@
 
 <hr>
 <?php 
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
 	include "SCfooter.php"; 
 ?>
 <br>

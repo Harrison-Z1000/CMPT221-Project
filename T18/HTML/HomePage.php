@@ -69,11 +69,12 @@
 <body style="background-color: lightgray;">
 <!--     Body of Webpage     -->
 
-<?php require ("../connect_db.php"); ?>
-
-<!---     Nar Bar     -->
 <?php
-	require "SCnavbar.php";
+	require "SCnavbar.php"; // Includes the Sunset Cruises Navigation Bar
+?>
+
+<?php 
+	require ("../connect_db.php"); // Connect to site_db and set $dbc to use with mysql functions
 ?>
 <h2> Plan your perfect sailing experience! Do not miss the chance to wander through remote travel destinations to celebrate life in the most wonderful places in the world.<br><br>
 Sunset Cruises features the most complete selection of onboard modern and comfortable private yachts. </h2>
@@ -95,7 +96,8 @@ Sunset Cruises features the most complete selection of onboard modern and comfor
 <!-- Disclaimer -->
 	
 <?php
-      include "SCfooter.php";
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 ?>
 	
 <br>

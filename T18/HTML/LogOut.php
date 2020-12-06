@@ -93,11 +93,9 @@
 <body style="background-color: lightgray;">
 
 <?php
-	//unset($_SESSION['login_status']);
-	require "SCnavbar.php"; 
-	require ("../connect_db.php");  // Connects to database site_db
+	require "SCnavbar.php"; // Includes the Sunset Cruises Navigation Bar
+	require ("../connect_db.php"); // Connect to site_db and set $dbc to use with mysql functions
 	
-//	session_start();
 	unset($_SESSION["login_status"]);;
 	
 	// Display Login message
@@ -117,10 +115,8 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
 <?php
-	/**************************************************************************
-	* Include footer
-	**************************************************************************/
-	include "SCfooter.php"; // Include the Sunset Cruises Footer
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 ?>
 <br>
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <!-- Group Assigment 02
@@ -62,7 +61,6 @@
 			  margin-top: 5px;
 			  margin-bottom: -50px;
 			  }
-
 	</style>
 
 </head>
@@ -70,9 +68,8 @@
 <body style="background-color: lightgray;">
 <!--     Body of Webpage     -->
 
-<!---     Nar Bar     -->
 <?php
-	require "SCnavbar.php";
+	require "SCnavbar.php";  // Includes the Sunset Cruises Navigation Bar
 ?>
 
 <h2> About Us </h2>
@@ -98,6 +95,7 @@
 <br> <br> <br> <!-- v1.2 Moved footer down -->
 <hr>
 <?php 
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
 	include "SCfooter.php"; 
 ?>
 <br>

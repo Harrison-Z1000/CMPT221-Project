@@ -6,6 +6,7 @@
 	v1.2  11/02/2020 HZ Formatted for best practices
 	v2.0  11/12/2020 HZ Added sorting feature for key columns and link to AddRowCabin page
 	v3.0  11/18/2020 HZ Added link to deactivate cabins
+	v3.2  12/04/2020 OW Changed table headers to user language
 -->
 
 <!--          Header         -->
@@ -97,7 +98,7 @@
 <?php
 	require "SCnavbar.php"; // Includes the Sunset Cruises navigation bar
 	
-	require ("../connect_db.php");  // Connects to database site_db
+	require ("../connect_db.php"); // Connect to site_db and set $dbc to use with mysql functions
 
 	echo "<table border = 1>";
 		echo "<tr>";
@@ -124,7 +125,7 @@
 		
 	// Create and begin table
 	echo "<table border=1>";
-		echo "<tr>";
+		echo "<tr>"; // v3.2 Changed table headers to user language
 			echo "<th> ID </th>";
 			echo "<th> Cabin Type </th>";
 			echo "<th> Price </th>";
@@ -194,7 +195,8 @@
 	echo "<br><br><br>";
 	echo "<hr>";
 
-	include "SCfooter.php"; // Include the Sunset Cruises footer
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 	
 	echo "<br>";
 ?>

@@ -94,7 +94,7 @@
 ?>
 
 <?php
-	require ("../connect_db.php");  // Connects to database site_db
+	require ("../connect_db.php"); // Connect to site_db and set $dbc to use with mysql functions
 ?>
 
 <?php
@@ -226,7 +226,8 @@
 <br><br>
 <hr>
 <?php
-	include "SCfooter.php"; // Includes the Sunset Cruises Footer
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 ?>
 <br>
 

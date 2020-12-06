@@ -103,16 +103,9 @@
 
 <body style="background-color: lightgray;">
 
-<!---     Nav Bar     -->
-
-<!-- *********************************************************************
-	*	Login Page
-	*	Created by Oliver Wilson - 17-Nov-2020.
-	********************************************************************* -->
 <?php
-	//unset($_SESSION['login_status']);
-	require "SCnavbar.php";
-	require ("../connect_db.php");  // Connects to database site_db
+	require "SCnavbar.php"; // Includes the Sunset Cruises Navigation Bar
+	require ("../connect_db.php");  // Connect to site_db and set $dbc to use with mysql functions
 ?>
 
 
@@ -133,29 +126,29 @@
 	/**************************************************************************
 	*	Initial $error_message to "" - this means there are no errors
 	**************************************************************************/
-		$error_message="";
-		if ($_SERVER['REQUEST_METHOD'] == "GET") {
-			$error_message = "Enter Username and Password to Login";
-		}
-		else if ($username=="") {
-			$error_message = "Please enter Username.";
-		}
-		else if ($password=="") {
-			$error_message = "Please enter Password.";
-		}
-		// Error handler to avoid code injections
-		else if (strpos($username, "<") !== false) {
-			$error_message = "The '<' character is not allowed. ";
-		}
-		else {
-			$q="SELECT * FROM T18_Users
-					WHERE user_name='$username' AND BINARY user_password='$password'";
-			$r=mysqli_query($dbc, $q);
+	$error_message="";
+	if ($_SERVER['REQUEST_METHOD'] == "GET") {
+		$error_message = "Enter Username and Password to Login";
+	}
+	else if ($username=="") {
+		$error_message = "Please enter Username.";
+	}
+	else if ($password=="") {
+		$error_message = "Please enter Password.";
+	}
+	// Error handler to avoid code injections
+	else if (strpos($username, "<") !== false) {
+		$error_message = "The '<' character is not allowed. ";
+	}
+	else {
+		$q="SELECT * FROM T18_Users
+				WHERE user_name='$username' AND BINARY user_password='$password'";
+		$r=mysqli_query($dbc, $q);
 
-			if (mysqli_num_rows($r) !== 1) {
-				$error_message = "Username and Password are not valid!";
-			}
+		if (mysqli_num_rows($r) !== 1) {
+			$error_message = "Username and Password are not valid!";
 		}
+	}
 
 
 	/**************************************************************************
@@ -166,42 +159,42 @@
 				WHERE user_name='$username' AND BINARY user_password='$password'";
 		$r=mysqli_query($dbc, $q);
 
-			// If the query ran and we retreived ONE record, get the password in table
-			if ($r) {
-				// if we have a match - there will be one row retreived
-				if (mysqli_num_rows($r) == 1) {
+		// If the query ran and we retreived ONE record, get the password in table
+		if ($r) {
+			// if we have a match - there will be one row retreived
+			if (mysqli_num_rows($r) == 1) {
 
-					/**************************************************************************
-					* 	Successful Login Messages
-					**************************************************************************/
-					//session_start();
-					$_SESSION['login_status'] = "LOGGED IN";
+				/**************************************************************************
+				* 	Successful Login Messages
+				**************************************************************************/
+				//session_start();
+				$_SESSION['login_status'] = "LOGGED IN";
 
-					// Display Login message
-					echo "<p style='padding: 20px; margin: 15px; text-align: center; color: white; background-color: rgb(0,0,0,.5)'>";
-						echo "Successfully Logged in!<br>";
-						echo "<br>Welcome <b> $username </b>!";
-					echo "</p>";
+				// Display Login message
+				echo "<p style='padding: 20px; margin: 15px; text-align: center; color: white; background-color: rgb(0,0,0,.5)'>";
+					echo "Successfully Logged In!<br>";
+					echo "<br>Welcome <b> $username </b>!";
+				echo "</p>";
 
-					//v1.2 Directs user to admin table page after logging in
-					header("Location: Admin.php");
-					exit();
-				}
+				// v1.2 Directs user to admin table page after logging in
+				header("Location: Admin.php");
+				exit();
 			}
+		}
 	}
 	else {
 		/**************************************************************************
 		 *		When SUBMIT is pressed, browser loads the ACTION file
 		 **************************************************************************/
-		echo "<h2> Log In to access Admin Functions </h2>";
+		echo "<h2> Log In to Access Admin Functions </h2>";
 		echo "<form style='background-color: rgb(0,0,0,.5); color: white; action='LogIn.php' method='POST'>";
-    echo "<table>";
-    echo "<tr> Username:</tr>";
-    echo "<tr> <input type='text' name='username' value=$username> </tr>";
-    echo "<br>";
-    echo "<tr> Password: <tr>";
-    echo "<tr> <input type='password' name='password'> </tr>";
-    echo "</table>"; //v1.2 Changed field type to password
+			echo "<table>";
+			echo "<tr> Username:</tr>";
+			echo "<tr> <input type='text' name='username' value=$username> </tr>";
+			echo "<br>";
+			echo "<tr> Password: <tr>";
+			echo "<tr> <input type='password' name='password'> </tr>"; // v1.2 Changed field type to password
+			echo "</table>";
 			echo "<br> <input type='submit'>";
 		echo "</form>";
 
@@ -215,7 +208,8 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
 <?php
-	include "SCfooter.php"; // Include the Sunset Cruises Footer
+	// Include the code to display the Sunset Cruises footer, which uses FILE_AUTHOR
+	include "SCfooter.php";
 ?>
 <br>
 
