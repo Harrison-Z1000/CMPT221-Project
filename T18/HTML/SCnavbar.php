@@ -1,4 +1,4 @@
-<!-- Navigation Bar for the Sunset Cruises website 
+<!-- Navigation Bar for the Sunset Cruises website
 		Created on 10 October 2020
 -->
 
@@ -7,13 +7,13 @@
 		echo ".header { width: 100%;";
 				echo "background-color: rgb(0,0,0,.2);";
 				echo "}";
-		
+
 		echo ".header ul { text-align: center; }";
-		
+
 		echo ".header ul li { list-style: none;";
 				echo "display: inline-block;";
 				echo "}";
-						
+
 		echo ".header ul li a { display: block;";
 					echo" text-decoration: none;";
 					echo "text-transform: uppercase;";
@@ -24,11 +24,11 @@
 					echo "padding: 25px;";
 					echo "transition: all ease 0.5s;";
 				echo "}";
-						
+
 		echo ".header ul li a:hover { background-color: lightgray;}";
 	echo "</style>";
-	
-	
+
+
 	session_start();
 	//unset($_SESSION['login_status']);
 	if (isset($_SESSION['login_status'])) {
@@ -37,9 +37,9 @@
 	else {
 		$user_status = "NOT LOGGED IN.";
 	}
-	
+
 	/**************************************************************************
-	* 	Display Navigation Bar when ADMIN is logged in 
+	* 	Display Navigation Bar when ADMIN is logged in
 	**************************************************************************/
 	if ($user_status == "LOGGED IN") {
 		echo "<div class=\"header\">";
@@ -64,7 +64,6 @@
 				echo "<li><a href='HomePage.php'>Our Products</a></li>";
 				echo "<li><a href='AboutUs.php'>About Us</a></li>";
 				echo "<li><a href='ContactUs.php'>Contact Us</a></li>";
-				echo "<li><a href='Tables.php'>Tables</a></li>";
 				echo "<li style='float: right;'><a href='LogIn.php'> <u>Login</u> </a></li>";
 			echo "</ul>";
 		echo "</div>";
