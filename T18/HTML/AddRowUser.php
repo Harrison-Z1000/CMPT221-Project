@@ -130,10 +130,10 @@
 		else if (strpos($username, "<") !== false) {
 			$error_message = "The '<' character is not allowed.";
 		}
-		else if (strlen($username) < 5) {
-			$error_message = "Make sure to enter the User Name.";
+		else if (strlen($username) > 20) {
+			$error_message = "Max Length is 20. Please try again";
 		}
-		else if (strlen($password)<6) {
+		else if (strlen($password)<3) {
 			$error_message = "The password must be 6 or more characters.";
 		}
 		else if ($email == "") {
