@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <!-- Filename: Employee Login Page
-     Created by Oliver Wilson 
-	 
+     Created by Oliver Wilson
+
 	 v1.0  12/04/2020 OW Initial page created and linked to other pages on the site
 	 v1.2  12/05/2020 HZ Formated for best practices and made other changes
 -->
@@ -12,7 +12,7 @@
 <head>
 	<title> Log In </title>
 	<meta charset="utf-8">
-	
+
 	<!-- CSS -->
 	<style>
 		body { background: url(Crab.jpg) no-repeat;
@@ -20,16 +20,16 @@
 				height: 60vh;
 				background-position: center;
 				}
-							  
-		p { margin: 1px; 
+
+		p { margin: 1px;
 			padding: 7px;
 			background-color: rgb(0,0,0,.5);
 			border-radius: 100px;
 			font-size: 20px;
 			font-weight: 600;
 			}
-				
-		form { margin: 1px; 
+
+		form { margin: 1px;
 				padding: 7px;
 				background-color: rgb(0,0,0,.5);
 				border-radius: 100px;
@@ -37,16 +37,16 @@
 				font-weight: 600;
 				text-align: center;
 				color: white;
-				}		
-		
-		h2 { text-align: center; 
+				}
+
+		h2 { text-align: center;
 			 font-weight: 600;
 			 background-color: rgb(0,0,0,.1)
 			 border-radius: 100px;
 			 padding: 10px;
 			 margin: 10px;
-			 } 
-		
+			 }
+
 		img { size: cover;
 			  position: center;
 			  height: 60px;
@@ -54,26 +54,26 @@
 			  margin-top: 5px;
 			  margin-bottom: -50px;
 			  }
-			  
-		table, td { margin-right:auto;       
-					margin-left: auto; 
-					border:2px solid black;  
+
+		table, td { margin-right:auto;
+					margin-left: auto;
+					border:2px solid black;
 					border-collapse:collapse;
-					padding: 15px; 
+					padding: 15px;
 					text-align: left;
 					background-color: white;
 					}
-					
-        th { margin-right:auto; 
-			 margin-left: auto; 
-			 border:2px solid black;  
+
+        th { margin-right:auto;
+			 margin-left: auto;
+			 border:2px solid black;
 			 border-collapse:collapse;
-			 padding: 15px; 
-			 text-align: left;	
-			 background-color: orange; 
+			 padding: 15px;
+			 text-align: left;
+			 background-color: orange;
 			 color:white;
 			 }
-		
+
 		.button {
 			  border: none;
 			  color: white;
@@ -111,7 +111,7 @@
 	********************************************************************* -->
 <?php
 	//unset($_SESSION['login_status']);
-	require "SCnavbar.php"; 
+	require "SCnavbar.php";
 	require ("../connect_db.php");  // Connects to database site_db
 ?>
 
@@ -128,7 +128,7 @@
 	else {
 		$username = $password="";
 	}
-	
+
 
 	/**************************************************************************
 	*	Initial $error_message to "" - this means there are no errors
@@ -144,19 +144,19 @@
 			$error_message = "Please enter Password.";
 		}
 		// Error handler to avoid code injections
-		else if (strpos($username, "<") !== false) { 
+		else if (strpos($username, "<") !== false) {
 			$error_message = "The '<' character is not allowed. ";
 		}
 		else {
 			$q="SELECT * FROM T18_Users
 					WHERE user_name='$username' AND BINARY user_password='$password'";
 			$r=mysqli_query($dbc, $q);
-			
+
 			if (mysqli_num_rows($r) !== 1) {
 				$error_message = "Username and Password are not valid!";
 			}
 		}
-				
+
 
 	/**************************************************************************
 	* Call the function based on value of REQUEST_METHOD
@@ -165,41 +165,46 @@
 		$q="SELECT * FROM T18_Users
 				WHERE user_name='$username' AND BINARY user_password='$password'";
 		$r=mysqli_query($dbc, $q);
-		
+
 			// If the query ran and we retreived ONE record, get the password in table
 			if ($r) {
 				// if we have a match - there will be one row retreived
 				if (mysqli_num_rows($r) == 1) {
-					
+
 					/**************************************************************************
-					* 	Successful Login Messages 
+					* 	Successful Login Messages
 					**************************************************************************/
 					//session_start();
 					$_SESSION['login_status'] = "LOGGED IN";
-					
+
 					// Display Login message
 					echo "<p style='padding: 20px; margin: 15px; text-align: center; color: white; background-color: rgb(0,0,0,.5)'>";
 						echo "Successfully Logged in!<br>";
 						echo "<br>Welcome <b> $username </b>!";
 					echo "</p>";
-					
+
 					//v1.2 Directs user to admin table page after logging in
-					header("Location: Admin.php");	
+					header("Location: Admin.php");
 					exit();
 				}
 			}
 	}
 	else {
 		/**************************************************************************
-		 *		When SUBMIT is pressed, browser loads the ACTION file 
+		 *		When SUBMIT is pressed, browser loads the ACTION file
 		 **************************************************************************/
 		echo "<h2> Login to view User table and access admin functions </h2>";
 		echo "<form style='background-color: rgb(0,0,0,.5); color: white; action='LogIn.php' method='POST'>";
-			echo "<br> Username: 		<input type='text' name='username' value=$username>";
-			echo "<br> Password:  		<input type='password' name='password'>"; //v1.2 Changed field type to password 
+    echo "<table>";
+    echo "<tr> Username:</tr>";
+    echo "<tr> <input type='text' name='username' value=$username> </tr>";
+    echo "<br>";
+    echo "<tr> Password: <tr>";
+    echo "<tr> <input type='text' name='password'> </tr>";
+    echo "</table>"; //v1.2 Changed field type to password
 			echo "<br> <input type='submit'>";
 		echo "</form>";
-		
+
 		echo "<p style='padding: 20px; margin: 15px; text-align: center; color: white; background-color: rgb(0,0,0,.5)'>";
 				// Display error message
 			echo "<b>Important:</b> " . $error_message;
