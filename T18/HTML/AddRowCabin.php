@@ -198,7 +198,6 @@
 		echo "<form action='AdminCabinTable.php'>";
 			echo "<button class='button button1' onclick=> Back </button>";
 		echo "</form>";
-	}
 
 	echo "<br><br><br><br><br>";
 	echo "<hr>";
