@@ -103,7 +103,7 @@
 
 <body style="background-color: lightgray;">
 
-<!---     Nar Bar     -->
+<!---     Nav Bar     -->
 
 <!-- *********************************************************************
 	*	Login Page
@@ -193,14 +193,14 @@
 		/**************************************************************************
 		 *		When SUBMIT is pressed, browser loads the ACTION file
 		 **************************************************************************/
-		echo "<h2> Login to view User table and access admin functions </h2>";
+		echo "<h2> Log In to access Admin Functions </h2>";
 		echo "<form style='background-color: rgb(0,0,0,.5); color: white; action='LogIn.php' method='POST'>";
     echo "<table>";
     echo "<tr> Username:</tr>";
     echo "<tr> <input type='text' name='username' value=$username> </tr>";
     echo "<br>";
     echo "<tr> Password: <tr>";
-    echo "<tr> <input type='text' name='password'> </tr>";
+    echo "<tr> <input type='password' name='password'> </tr>";
     echo "</table>"; //v1.2 Changed field type to password
 			echo "<br> <input type='submit'>";
 		echo "</form>";
@@ -215,9 +215,6 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
 <?php
-	/**************************************************************************
-	* Include footer
-	**************************************************************************/
 	include "SCfooter.php"; // Include the Sunset Cruises Footer
 ?>
 <br>
