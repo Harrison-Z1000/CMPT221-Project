@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- Group Assigment 02
+<!-- Group Assignment 02
      Change Log Page
      Created by Team 18. 16 September 2020 
 	 
@@ -89,7 +89,7 @@
 <body style="background-color: lightgray;">
 <!--     Body of Webpage     -->
 
-<!---     Nar Bar     -->
+<!---     Nav Bar     -->
 <?php
 	require "SCnavbar.php";
 ?>

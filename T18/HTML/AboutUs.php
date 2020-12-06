@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <!-- Group Assigment 02
@@ -6,6 +7,7 @@
 	 
 	 Log:
 	 1) Initial Page created 23-Sep-2020
+	 2) Made the footer lower on the page 04-Dec-2020
 -->
 
 <!--         HTML Header         -->
@@ -93,7 +95,7 @@
 			Add and remove employees from the database<br>
 			... and do much more! </p>
 	
-
+<br> <br> <br> <!-- v1.2 Moved footer down -->
 <hr>
 <?php 
 	include "SCfooter.php"; 

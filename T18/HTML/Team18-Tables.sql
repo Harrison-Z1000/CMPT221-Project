@@ -43,7 +43,7 @@ CREATE TABLE T18_Cabins (
     cabin_availability ENUM("Available", "Not Available", "On Hold") NOT NULL,
     cabin_description VARCHAR(100),
     cabin_deck ENUM("Main", "Lower", "Upper"),
-    cruise_ID INT(100), /* Wouldn't this be a foreign key? */
+    cruise_ID INT(100),
     image_file VARCHAR(100) DEFAULT "Image File",
     cabin_active ENUM("Y", "N") NOT NULL DEFAULT "Y" /* V3 Attribute added to T18_Cabins */
 );
@@ -74,7 +74,7 @@ INSERT INTO T18_Users (user_name, user_password, user_email, employee_type, crea
 
 /* Add a User entry for Andrew Tokash.*/
 INSERT INTO T18_Users (user_name, user_password, user_active, employee_type, creation_date, last_updated_password)
-    VALUES ("atokash", "ADMIN", "Y", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    VALUES ("aptokash", "ADMIN", "Y", "Admin", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
 /* Add entries for two dummy users that are NOT ADMIN. */

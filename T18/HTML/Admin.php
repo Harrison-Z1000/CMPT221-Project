@@ -67,7 +67,7 @@
 
 <body style="background-color: lightgray;">
 
-<!---     Nar Bar     -->
+<!---     Nav Bar     -->
 <?php
 	require "SCnavbar.php"; 
 ?>
