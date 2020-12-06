@@ -200,7 +200,7 @@
     echo "<tr> <input type='text' name='username' value=$username> </tr>";
     echo "<br>";
     echo "<tr> Password: <tr>";
-    echo "<tr> <input type='text' name='password'> </tr>";
+    echo "<tr> <input type='password' name='password'> </tr>";
     echo "</table>"; //v1.2 Changed field type to password
 			echo "<br> <input type='submit'>";
 		echo "</form>";
