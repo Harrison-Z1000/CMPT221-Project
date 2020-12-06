@@ -146,7 +146,7 @@
 		
 		// Check query return code
 		if ($r) {
-			echo "<br><br> Data inserted successfully!";
+			echo "";
 		}
 		else {
 			echo "<li>" . mysqli_error($dbc) . "</li>";
