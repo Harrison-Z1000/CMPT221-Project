@@ -194,7 +194,7 @@
 		**************************************************************************/
 		echo "<form style='background-color: rgb(0,0,0,.4); color: white;' action='AddRowUser.php' method='POST'>";
 		echo "<fieldset>";
-			echo "<br> User Name: 			<input type='text' name='username' value=$username>";
+			echo "<br> Username: 			<input type='text' name='username' value=$username>";
 			echo "<br> Password:  			<input type='password' name='password'>";
 			echo "<br> Email:				<input type='email' name='email'>";
 			echo "<br> Employee type: 		<select name='type'>";
