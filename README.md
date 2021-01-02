@@ -1,2 +1,2 @@
-# Software Development II Project
-This repository contains work for the semester project by Team 18. The teammates are Oliver Wilson, Devin White, and Harrison Zheng.
+# Software Development II - Group Project
+This repository contains work for the semester-long group project. The group members are Harrison Zheng, Oliver Wilson, and Devin White.
